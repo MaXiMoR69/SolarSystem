@@ -56,7 +56,7 @@ namespace SolarSystem
 
 
             //SendEtcd();
-            SendKafka();
+
 
 
 
