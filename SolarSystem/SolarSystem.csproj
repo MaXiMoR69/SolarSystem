@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.1.1" />
+    <PackageReference Include="DVG.Autoportal.NLog.Targets.KafkaAppender" Version="1.0.8" />
+    <PackageReference Include="NLog" Version="5.1.4" />
+    <PackageReference Include="NLog.Config" Version="4.7.15" />
+    <PackageReference Include="NLog.Kafka" Version="0.2.2" />
+    <PackageReference Include="NLog.Schema" Version="5.1.4" />
+    <PackageReference Include="NLog.Targets.Kafka" Version="1.0.0" />
+    <PackageReference Include="NLog.Targets.KafkaAppender" Version="2.0.0" />
+    <PackageReference Include="NLog.Windows.Forms" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\maksg\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

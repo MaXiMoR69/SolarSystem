@@ -1,0 +1,33 @@
+2023-05-23 10:48:38.3233 SolarSystem.MainForm Delivered message to logs [[0]] @21
+2023-05-23 10:48:38.5701 SolarSystem.MainForm Program Start
+2023-05-23 10:52:19.5042 SolarSystem.MainForm Delivered message to logs [[0]] @22
+2023-05-23 10:52:19.7038 SolarSystem.MainForm Program Start
+2023-05-23 10:57:03.1502 SolarSystem.MainForm Delivered message to logs [[0]] @23
+2023-05-23 10:57:03.3764 SolarSystem.MainForm Program Start
+2023-05-23 10:57:13.8204 SolarSystem.MainForm Delivered message to logs [[0]] @26
+2023-05-23 10:57:13.9687 SolarSystem.MainForm Program Start
+2023-05-23 10:57:27.5547 SolarSystem.MainForm Click Start
+2023-05-23 10:57:27.7139 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:27.8097 SolarSystem.MainForm Click Start
+2023-05-23 10:57:27.9492 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:27.9492 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.0878 SolarSystem.MainForm Click Start
+2023-05-23 10:57:28.2442 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.2442 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.2442 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.3787 SolarSystem.MainForm Click Start
+2023-05-23 10:57:28.5731 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.5731 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.5731 SolarSystem.MainForm Click Stop
+2023-05-23 10:57:28.5731 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:12.2936 SolarSystem.MainForm Delivered message to logs [[0]] @43
+2023-05-23 11:01:12.5607 SolarSystem.MainForm Program Start
+2023-05-23 11:01:13.6091 SolarSystem.MainForm Click Start
+2023-05-23 11:01:13.8100 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:13.9012 SolarSystem.MainForm Click Start
+2023-05-23 11:01:14.0511 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:14.0511 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:14.2041 SolarSystem.MainForm Click Start
+2023-05-23 11:01:14.6987 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:14.6987 SolarSystem.MainForm Click Stop
+2023-05-23 11:01:14.6987 SolarSystem.MainForm Click Stop
