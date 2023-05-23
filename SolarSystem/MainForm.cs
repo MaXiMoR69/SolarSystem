@@ -221,29 +221,20 @@ namespace SolarSystem
         }
 
 
-        //async void SendEtcd()
-        //{
-        //    using var client = new HttpClient();
-        //    var content = new FormUrlEncodedContent(new[]
-        //    {
-        //            new KeyValuePair<string, string>("value", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"))
-        //        });
-        //    var response = await client.PostAsync("http://89.223.70.79:2379/v2/keys/solarsystem", content);
-        //    string responseText = await response.Content.ReadAsStringAsync();
-        //    logger.Debug(responseText);
-
-        //}
-
-        void SendKafka()
+        async void SendEtcd()
         {
+           using var client = new HttpClient();
+           var content = new FormUrlEncodedContent(new[]
+           {
+                   new KeyValuePair<string, string>("value", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"))
+               });
+           var response = await client.PostAsync("http://89.223.70.79:2379/v2/keys/solarsystem", content);
+           string responseText = await response.Content.ReadAsStringAsync();
+           logger.Debug(responseText);
 
-            var config = new ProducerConfig { BootstrapServers = "89.223.70.79:9092" };
-
-            using var producer = new ProducerBuilder<Null, string>(config).Build();
-            var message = new Message<Null, string> { Value = "Hello, KAFKA!" };
-            var result = producer.ProduceAsync("logs", message).GetAwaiter().GetResult();
-            logger.Debug($"Delivered message to {result.TopicPartitionOffset}");
         }
+
+        
 
 
     }
