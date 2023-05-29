@@ -1,7 +1,6 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
-using System.Net.Http.Json;
-using System.Drawing;
+
 
 namespace SolarSystem
 {
@@ -51,8 +50,10 @@ namespace SolarSystem
 
         public MainForm()
         {
+            
             InitializeComponent();
-
+            CreateSolarSystem();
+            
 
             _hScrollBar.Size = new Size(1000, 50);
             _hScrollBar.Location = new Point(Width / 4, Height - 100);
@@ -123,15 +124,6 @@ namespace SolarSystem
 
         void CreateBody(SpaceBody Body, Label body, string name, double x, double y, double a_rad, double speed, double rad, double width, double height, Color color)
         {
-
-            body.Click += BodyClick;
-
-            void BodyClick(object sender, EventArgs e)
-            {
-                info.Text = name;
-                logger.Info(name);
-            }
-
             double x_loc, y_loc;
             double a = 0;
             x_loc = x;
@@ -152,9 +144,10 @@ namespace SolarSystem
             Body.BodySize_Height = height;
 
 
-            Controls.Add(body);
+            body.TextAlign = ContentAlignment.MiddleCenter;
             body.BackColor = color;
             body.Text = name;
+            Controls.Add(body);
 
             body.Size = new Size(Width, Height);
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -162,8 +155,14 @@ namespace SolarSystem
             Region rgn = new Region(path);
             body.Region = rgn;
 
+            
 
-
+            body.Click += BodyClick;
+            void BodyClick(object sender, EventArgs e)
+            {
+                info.Text = name;
+                logger.Info("Click on " + name);
+            }
 
         }
 
@@ -178,7 +177,7 @@ namespace SolarSystem
 
         void CreateSolarSystem()
         {
-            CreateBody(Sun, sun, "Sun", (Width - 200) / 2, 900 / 2, 1, 0, 1, 40, 40, Color.Yellow);
+            CreateBody(Sun, sun, "Sun", (Width - 200) / 2, 900 / 2, 1, 0, 1, 40, 40, Color.Yellow);  
             CreateBody(Mercury, mercury, "Mercury", (Width - 160) / 2, 430, 0.025, 1, 0.9, 8, 8, Color.Gray);
             CreateBody(Venus, venus, "Venus", (Width - 160) / 2, 400, 0.025, 1 / 2.6, 1.5, 15, 15, Color.Pink);
             CreateBody(Earth, earth, "Earth", (Width - 160) / 2, 360, 0.025, 1 / 3.2, 2.5, 20, 20, Color.Blue);
@@ -204,7 +203,7 @@ namespace SolarSystem
                 a = a + a_rad * speed;
             }
 
-            CreateBody(Moon, moon, "Earth", (Width - 150) / 2 + x_loc, 350 + y_loc, 0.025, 1 / 3.2, 2.5, 7, 7, Color.Gray);
+            CreateBody(Moon, moon, "Moon", (Width - 150) / 2 + x_loc, 350 + y_loc, 0.025, 1 / 3.2, 2.5, 7, 7, Color.Gray);
 
             Refresh();
         }
@@ -222,7 +221,7 @@ namespace SolarSystem
             Task.Run(() =>
             {
                 int i = 0;
-                stopButton.Click += ClickOnButtonStop;
+                stopButton.MouseClick += ClickOnButtonStop;
                 void ClickOnButtonStop(object sender, EventArgs e)
                 {
                     logger.Debug("Click Stop");
@@ -265,47 +264,60 @@ namespace SolarSystem
 
             var values = new Dictionary<string, string>
             {
-                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": 'closed',\r\n    \"lastUpdate\": \"2023-05-28T19:19:23.139Z\",\r\n    \"configsPath\": \"C:/home/kostar/documents/myconfig.json\"\r\n}" },
-                    
+                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \""+date+"\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" },
+                    {"action", "set" }
             };
             var content = new FormUrlEncodedContent(values);
+
 
             using var client = new HttpClient();
             try
             {
-                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/", content);
+                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/" + etcdConfig.EtcdKey, content);
                 string responseText = await response.Content.ReadAsStringAsync();
-                logger.Info("Связь с Etcd утановлена");
+                logger.Info("Связь с Etcd уcтановлена");
                 logger.Debug(responseText);
             }
             catch
             {
 
-                logger.Error("Связь с Etcd не установлена");
+                logger.Error("Связь с Etcd разорвана");
 
             }
-
-
-
-
-
         }
 
-        async void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        async void MainFormClosed(object sender, FormClosedEventArgs e)
         {
+            var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
+            var section = config.GetSection("EtcdConfig");
+            var etcdConfig = section.Get<EtcdConfig>();
+
+            var date = DateTime.Now.ToString();
+
+            var values = new Dictionary<string, string>
+            {
+                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \""+date+"\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" },
+                    {"action", "set" }
+            };
+            var content = new FormUrlEncodedContent(values);
 
 
+            using var client = new HttpClient();
+            try
+            {
+                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/" + etcdConfig.EtcdKey, content);
+                string responseText = await response.Content.ReadAsStringAsync();
+                logger.Info("Связь с Etcd установлена");
+                logger.Debug(responseText);
+            }
+            catch
+            {
 
+                logger.Error("Связь с Etcd разорвана");
+
+            }
         }
-
-
-
-
-
-
     }
-
-
 }
 
 

@@ -1,6 +1,4 @@
 ﻿
-using Microsoft.Extensions.Configuration;
-
 namespace SolarSystem
 {
     partial class MainForm
@@ -32,8 +30,8 @@ namespace SolarSystem
             startButton.Click += ClickOnButtonStart;
             Resize += Form1_Resize;
             Load += Form1_Load;
-            FormClosed += MainForm_FormClosed;
-
+            FormClosed += MainFormClosed;
+           
 
             BackColor = Color.Black;
 
@@ -47,8 +45,9 @@ namespace SolarSystem
 
         }
 
+       
 
-        
+
 
 
 

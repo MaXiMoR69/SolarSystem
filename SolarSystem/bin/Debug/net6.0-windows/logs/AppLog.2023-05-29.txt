@@ -1,0 +1,118 @@
+2023-05-29 19:47:23.1514 SolarSystem.MainForm Program Start
+2023-05-29 19:47:23.2308 SolarSystem.MainForm Связь с Etcd уcтановлена
+2023-05-29 19:47:23.2308 SolarSystem.MainForm {"action":"create","node":{"key":"/services/solarsystem/00000000000000000057","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"29.05.2023 19:47:22\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}","modifiedIndex":57,"createdIndex":57}}
+
+2023-05-29 19:47:25.3268 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:47:25.6533 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:50:10.4552 SolarSystem.MainForm Program Start
+2023-05-29 19:50:10.5380 SolarSystem.MainForm Связь с Etcd уcтановлена
+2023-05-29 19:50:10.5380 SolarSystem.MainForm {"action":"create","node":{"key":"/services/solarsystem/00000000000000000059","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"29.05.2023 19:50:09\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}","modifiedIndex":59,"createdIndex":59}}
+
+2023-05-29 19:50:15.2095 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:50:15.7100 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:50:16.2169 SolarSystem.MainForm Click on Uran
+2023-05-29 19:50:16.5009 SolarSystem.MainForm Click on Neptun
+2023-05-29 19:50:16.9434 SolarSystem.MainForm Click Start
+2023-05-29 19:50:39.3426 SolarSystem.MainForm Click Stop
+2023-05-29 19:50:39.6408 SolarSystem.MainForm Click Start
+2023-05-29 19:50:40.5560 SolarSystem.MainForm Click Stop
+2023-05-29 19:50:40.5560 SolarSystem.MainForm Click Stop
+2023-05-29 19:50:40.8949 SolarSystem.MainForm Click Start
+2023-05-29 19:50:41.7322 SolarSystem.MainForm Click Stop
+2023-05-29 19:50:41.7322 SolarSystem.MainForm Click Stop
+2023-05-29 19:50:41.7322 SolarSystem.MainForm Click Stop
+2023-05-29 19:51:57.5159 SolarSystem.MainForm Program Start
+2023-05-29 19:51:57.6340 SolarSystem.MainForm Связь с Etcd уcтановлена
+2023-05-29 19:51:57.6340 SolarSystem.MainForm {"action":"create","node":{"key":"/services/solarsystem/00000000000000000061","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"29.05.2023 19:51:56\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}","modifiedIndex":61,"createdIndex":61}}
+
+2023-05-29 19:51:58.6831 SolarSystem.MainForm Click Start
+2023-05-29 19:51:59.0122 SolarSystem.MainForm Click Stop
+2023-05-29 19:52:30.8583 SolarSystem.MainForm Program Start
+2023-05-29 19:52:30.9375 SolarSystem.MainForm Связь с Etcd уcтановлена
+2023-05-29 19:52:30.9375 SolarSystem.MainForm {"action":"create","node":{"key":"/services/solarsystem/00000000000000000063","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"29.05.2023 19:52:30\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}","modifiedIndex":63,"createdIndex":63}}
+
+2023-05-29 19:53:22.0599 SolarSystem.MainForm Program Start
+2023-05-29 19:53:22.1390 SolarSystem.MainForm Связь с Etcd уcтановлена
+2023-05-29 19:53:22.1390 SolarSystem.MainForm {"action":"create","node":{"key":"/services/solarsystem/00000000000000000065","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"29.05.2023 19:53:21\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}","modifiedIndex":65,"createdIndex":65}}
+
+2023-05-29 19:53:39.5254 SolarSystem.MainForm Click Start
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:40.9906 SolarSystem.MainForm Click on Jupiter
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:41.2990 SolarSystem.MainForm Click on Saturn
+2023-05-29 19:53:42.3715 SolarSystem.MainForm Click Stop
