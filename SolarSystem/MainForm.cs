@@ -1,6 +1,7 @@
 using NLog;
-using Confluent.Kafka;
-
+using Microsoft.Extensions.Configuration;
+using System.Net.Http.Json;
+using System.Drawing;
 
 namespace SolarSystem
 {
@@ -26,6 +27,7 @@ namespace SolarSystem
         Label uran = new Label();
         Label neptun = new Label();
 
+        Label info = new Label();
 
 
         Label moon = new Label();
@@ -68,6 +70,7 @@ namespace SolarSystem
             startButton.Location = new Point(20, 20);
             startButton.Text = "Start";
             startButton.BackColor = Color.Green;
+            startButton.Font = new Font("Arial", 10, FontStyle.Bold);
             Controls.Add(startButton);
 
 
@@ -75,8 +78,16 @@ namespace SolarSystem
             stopButton.Location = new Point(20, 20);
             stopButton.Text = "Stop";
             stopButton.BackColor = Color.Red;
+            stopButton.Font = new Font("Arial", 10, FontStyle.Bold);
             Controls.Add(stopButton);
 
+            info.Size = new Size(200, 50);
+            info.Location = new Point(200, 20);
+            info.BackColor = Color.White;
+            info.Text = "Body name";
+            info.TextAlign = ContentAlignment.MiddleCenter;
+            info.Font = new Font("Arial", 20, FontStyle.Bold);
+            Controls.Add(info);
 
 
 
@@ -91,6 +102,13 @@ namespace SolarSystem
             public double BodySize_Width;
             public double BodySize_Height;
         }
+        public class EtcdConfig
+        {
+            public string EtcdUrl { get; set; }
+            public string EtcdKey { get; set; }
+
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -105,6 +123,14 @@ namespace SolarSystem
 
         void CreateBody(SpaceBody Body, Label body, string name, double x, double y, double a_rad, double speed, double rad, double width, double height, Color color)
         {
+
+            body.Click += BodyClick;
+
+            void BodyClick(object sender, EventArgs e)
+            {
+                info.Text = name;
+                logger.Info(name);
+            }
 
             double x_loc, y_loc;
             double a = 0;
@@ -135,7 +161,13 @@ namespace SolarSystem
             path.AddEllipse((int)Body.BodyLocation_x, (int)Body.BodyLocation_y, (int)Body.BodySize_Width, (int)Body.BodySize_Height);
             Region rgn = new Region(path);
             body.Region = rgn;
+
+
+
+
         }
+
+
         void HScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
 
@@ -221,20 +253,54 @@ namespace SolarSystem
         }
 
 
+
+
         async void SendEtcd()
         {
-           using var client = new HttpClient();
-           var content = new FormUrlEncodedContent(new[]
-           {
-                   new KeyValuePair<string, string>("value", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"))
-               });
-           var response = await client.PostAsync("http://89.223.70.79:2379/v2/keys/solarsystem", content);
-           string responseText = await response.Content.ReadAsStringAsync();
-           logger.Debug(responseText);
+            var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
+            var section = config.GetSection("EtcdConfig");
+            var etcdConfig = section.Get<EtcdConfig>();
+
+            var date = DateTime.Now.ToString();
+
+            var values = new Dictionary<string, string>
+            {
+                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": 'closed',\r\n    \"lastUpdate\": \"2023-05-28T19:19:23.139Z\",\r\n    \"configsPath\": \"C:/home/kostar/documents/myconfig.json\"\r\n}" },
+                    
+            };
+            var content = new FormUrlEncodedContent(values);
+
+            using var client = new HttpClient();
+            try
+            {
+                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/", content);
+                string responseText = await response.Content.ReadAsStringAsync();
+                logger.Info("Связь с Etcd утановлена");
+                logger.Debug(responseText);
+            }
+            catch
+            {
+
+                logger.Error("Связь с Etcd не установлена");
+
+            }
+
+
+
+
 
         }
 
-        
+        async void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+
+
+        }
+
+
+
+
 
 
     }

@@ -1,0 +1,6 @@
+{
+  "EtcdConfig": {
+    "EtcdUrl": "http://89.223.70.79:2379",
+    "EtcdKey": "solarsystem"
+  }
+}

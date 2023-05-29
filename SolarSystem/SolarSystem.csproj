@@ -11,6 +11,8 @@
   <ItemGroup>
     <PackageReference Include="Confluent.Kafka" Version="2.1.1" />
     <PackageReference Include="DVG.Autoportal.NLog.Targets.KafkaAppender" Version="1.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="NLog" Version="5.1.4" />
     <PackageReference Include="NLog.Config" Version="4.7.15" />
     <PackageReference Include="NLog.Kafka" Version="0.2.2" />

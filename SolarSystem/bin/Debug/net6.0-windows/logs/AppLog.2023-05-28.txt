@@ -1,0 +1,16 @@
+2023-05-28 23:22:55.9686 SolarSystem.MainForm Program Start
+2023-05-28 23:22:56.0942 SolarSystem.MainForm Связь с Etcd утановлена
+2023-05-28 23:22:56.0942 SolarSystem.MainForm {"action":"create","node":{"key":"/services/00000000000000000168","value":"","modifiedIndex":168,"createdIndex":168}}
+
+2023-05-28 23:29:27.2806 SolarSystem.MainForm Program Start
+2023-05-28 23:29:27.4110 SolarSystem.MainForm Связь с Etcd утановлена
+2023-05-28 23:29:27.4110 SolarSystem.MainForm {"action":"create","node":{"key":"/services/00000000000000000169","value":"","modifiedIndex":169,"createdIndex":169}}
+
+2023-05-28 23:29:43.1607 SolarSystem.MainForm Program Start
+2023-05-28 23:29:43.2955 SolarSystem.MainForm Связь с Etcd утановлена
+2023-05-28 23:29:43.2955 SolarSystem.MainForm {"action":"create","node":{"key":"/services/00000000000000000170","value":"ewfwefwe","modifiedIndex":170,"createdIndex":170}}
+
+2023-05-28 23:32:25.0011 SolarSystem.MainForm Program Start
+2023-05-28 23:32:25.1079 SolarSystem.MainForm Связь с Etcd утановлена
+2023-05-28 23:32:25.1091 SolarSystem.MainForm {"action":"create","node":{"key":"/services/00000000000000000172","value":"{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": 'closed',\r\n    \"lastUpdate\": \"2023-05-28T19:19:23.139Z\",\r\n    \"configsPath\": \"C:/home/kostar/documents/myconfig.json\"\r\n}","modifiedIndex":172,"createdIndex":172}}
+

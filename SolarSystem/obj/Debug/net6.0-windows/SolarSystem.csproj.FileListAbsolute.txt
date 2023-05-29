@@ -50,3 +50,16 @@ C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\NLo
 C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\NLog.Targets.Kafka.dll
 C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\NLog.Targets.KafkaAppender.dll
 C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\maksg\source\repos\SolarSystem\SolarSystem\obj\Debug\net6.0-windows\SolarSystem.MainForm.resources
