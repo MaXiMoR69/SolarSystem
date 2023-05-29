@@ -2,21 +2,49 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "Confluent.Kafka/2.1.1": {
+      "Confluent.Kafka/1.5.3": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.0",
-          "librdkafka.redist": "2.1.1"
+          "librdkafka.redist": "1.5.3"
         },
         "compile": {
-          "lib/net6.0/Confluent.Kafka.dll": {
+          "lib/netcoreapp2.1/Confluent.Kafka.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Confluent.Kafka.dll": {
+          "lib/netcoreapp2.1/Confluent.Kafka.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "dotnet-etcd/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.21.9",
+          "Grpc.Net.Client": "2.49.0",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/dotnet-etcd.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/dotnet-etcd.dll": {}
+        }
+      },
+      "dotnet-etcd-core/6.2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.21.10",
+          "Grpc.Net.Client": "2.50.0",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/dotnet-etcd.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/dotnet-etcd.dll": {}
         }
       },
       "DVG.Autoportal.NLog.Targets.KafkaAppender/1.0.8": {
@@ -33,6 +61,77 @@
           "lib/net452/NLog.Targets.KafkaAppender.dll": {}
         }
       },
+      "etcdnetv2/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/EtcdNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/EtcdNet.dll": {}
+        }
+      },
+      "Google.Protobuf/3.21.10": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.50.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.50.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.50.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.50.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.50.0"
+        },
+        "compile": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "kafka-net/0.9.0.65": {
         "type": "package",
         "compile": {
@@ -42,21 +141,13 @@
           "lib/net45/kafka-net.dll": {}
         }
       },
-      "librdkafka.redist/2.1.1": {
+      "librdkafka.redist/1.5.3": {
         "type": "package",
         "build": {
           "build/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/linux-arm64/native/librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-arm64"
-          },
           "runtimes/linux-x64/native/alpine-librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/centos6-librdkafka.so": {
             "assetType": "native",
             "rid": "linux-x64"
           },
@@ -64,25 +155,17 @@
             "assetType": "native",
             "rid": "linux-x64"
           },
+          "runtimes/linux-x64/native/debian9-librdkafka.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
           "runtimes/linux-x64/native/librdkafka.so": {
             "assetType": "native",
             "rid": "linux-x64"
           },
-          "runtimes/osx-arm64/native/librdkafka.dylib": {
-            "assetType": "native",
-            "rid": "osx-arm64"
-          },
           "runtimes/osx-x64/native/librdkafka.dylib": {
             "assetType": "native",
             "rid": "osx-x64"
-          },
-          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
           },
           "runtimes/win-x64/native/librdkafka.dll": {
             "assetType": "native",
@@ -92,33 +175,21 @@
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/libssl-3-x64.dll": {
+          "runtimes/win-x64/native/libzstd.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/msvcp140.dll": {
+          "runtimes/win-x64/native/msvcp120.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/vcruntime140.dll": {
+          "runtimes/win-x64/native/msvcr120.dll": {
             "assetType": "native",
             "rid": "win-x64"
           },
-          "runtimes/win-x64/native/zlib1.dll": {
+          "runtimes/win-x64/native/zlib.dll": {
             "assetType": "native",
             "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/zstd.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libcrypto-3.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
           },
           "runtimes/win-x86/native/librdkafka.dll": {
             "assetType": "native",
@@ -128,23 +199,19 @@
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/libssl-3.dll": {
+          "runtimes/win-x86/native/libzstd.dll": {
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/msvcp140.dll": {
+          "runtimes/win-x86/native/msvcp120.dll": {
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/vcruntime140.dll": {
+          "runtimes/win-x86/native/msvcr120.dll": {
             "assetType": "native",
             "rid": "win-x86"
           },
-          "runtimes/win-x86/native/zlib1.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/zstd.dll": {
+          "runtimes/win-x86/native/zlib.dll": {
             "assetType": "native",
             "rid": "win-x86"
           }
@@ -254,6 +321,41 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -310,6 +412,19 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Logging.Abstractions/3.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Primitives/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -342,7 +457,7 @@
           }
         }
       },
-      "NLog/5.1.4": {
+      "NLog/5.1.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {
@@ -383,7 +498,7 @@
           "lib/netstandard2.0/NLog.Kafka.dll": {}
         }
       },
-      "NLog.Schema/5.1.4": {
+      "NLog.Schema/5.1.5": {
         "type": "package",
         "contentFiles": {
           "contentFiles/any/any/NLog.xsd": {
@@ -438,7 +553,7 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
-      "System.Memory/4.5.0": {
+      "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -511,23 +626,63 @@
     }
   },
   "libraries": {
-    "Confluent.Kafka/2.1.1": {
-      "sha512": "mXFB78iSv3jNNHYCUO3EtDzYlg464m306PBFCiiKARcwCL3A+Zc8DsyioS3MOu47Sm2uBOgazeSbk2707rz+DQ==",
+    "Confluent.Kafka/1.5.3": {
+      "sha512": "rpDn5UaAswv4CGZpogvPCkSPci0Dfzcmt4EZyF1euGoBJsIdJD1WbRqbsqg0/lk6QMtXvO3csVPK2w992MzcoQ==",
       "type": "package",
-      "path": "confluent.kafka/2.1.1",
+      "path": "confluent.kafka/1.5.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "confluent.kafka.2.1.1.nupkg.sha512",
+        "confluent.kafka.1.5.3.nupkg.sha512",
         "confluent.kafka.nuspec",
-        "lib/net462/Confluent.Kafka.dll",
-        "lib/net462/Confluent.Kafka.xml",
-        "lib/net6.0/Confluent.Kafka.dll",
-        "lib/net6.0/Confluent.Kafka.xml",
+        "lib/net45/Confluent.Kafka.dll",
+        "lib/net45/Confluent.Kafka.xml",
+        "lib/net46/Confluent.Kafka.dll",
+        "lib/net46/Confluent.Kafka.xml",
+        "lib/netcoreapp2.1/Confluent.Kafka.dll",
+        "lib/netcoreapp2.1/Confluent.Kafka.xml",
         "lib/netstandard1.3/Confluent.Kafka.dll",
         "lib/netstandard1.3/Confluent.Kafka.xml",
         "lib/netstandard2.0/Confluent.Kafka.dll",
         "lib/netstandard2.0/Confluent.Kafka.xml"
+      ]
+    },
+    "dotnet-etcd/6.0.1": {
+      "sha512": "R+a62T2j9htfBfZ+OEK+nnk5aJ8KRPgJPxRAc1BgO+w8lNpUvkA5YOjd4nYwmJT/KG7VdECRb4pE/zWbq4igUQ==",
+      "type": "package",
+      "path": "dotnet-etcd/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "dotnet-etcd.6.0.1.nupkg.sha512",
+        "dotnet-etcd.nuspec",
+        "etcd-logo-rectangle.png",
+        "lib/net5.0/dotnet-etcd.dll",
+        "lib/net6.0/dotnet-etcd.dll",
+        "lib/net7.0/dotnet-etcd.dll"
+      ]
+    },
+    "dotnet-etcd-core/6.2.1.1": {
+      "sha512": "50J8bgX0KQDd3G3l0wqUiMk3xCkeXlNGfufbQ7wDZTJBEZXuidEBnVYkimQhx4mALpSYxPDHFe8jpUHbtb7ALw==",
+      "type": "package",
+      "path": "dotnet-etcd-core/6.2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "dotnet-etcd-core.6.2.1.1.nupkg.sha512",
+        "dotnet-etcd-core.nuspec",
+        "etcd-logo-rectangle.png",
+        "lib/net5.0/dotnet-etcd.dll",
+        "lib/net6.0/dotnet-etcd.dll",
+        "lib/net7.0/dotnet-etcd.dll",
+        "lib/netcoreapp2.2/dotnet-etcd.dll",
+        "lib/netcoreapp3.1/dotnet-etcd.dll",
+        "lib/netstandard2.0/dotnet-etcd.dll",
+        "lib/netstandard2.1/dotnet-etcd.dll"
       ]
     },
     "DVG.Autoportal.NLog.Targets.KafkaAppender/1.0.8": {
@@ -542,6 +697,122 @@
         "lib/net452/NLog.Targets.KafkaAppender.dll"
       ]
     },
+    "etcdnetv2/2.0.1": {
+      "sha512": "Dk/uaAkU+ewg9ReiVCIEbJPuTy+Lum+7oof+p9yufhyXlerVkirbYBNcZGgXYFle/pNXfH4l9qHPcT7OwlfaGA==",
+      "type": "package",
+      "path": "etcdnetv2/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "etcdnetv2.2.0.1.nupkg.sha512",
+        "etcdnetv2.nuspec",
+        "lib/net45/EtcdNet.dll",
+        "lib/netstandard2.0/EtcdNet.dll"
+      ]
+    },
+    "Google.Protobuf/3.21.10": {
+      "sha512": "9KnY/4N1pZkfoLv8Ozho3Tf8ms09YGX1UuURqXXidAhTP/FvIHwbon8VhX4Zmxb0YrOc/aVWYMgEimBwjbWCGg==",
+      "type": "package",
+      "path": "google.protobuf/3.21.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.21.10.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "Grpc.Core.Api/2.50.0": {
+      "sha512": "ECZr0AqUobCIfxPYm07D/IqMbGd+Vu9KquRLLY1kMzc/xWZdqqiK0jA6t6Y5gate3lV4EiH53cvfcb6anritQg==",
+      "type": "package",
+      "path": "grpc.core.api/2.50.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.core.api.2.50.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/net462/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.50.0": {
+      "sha512": "FEQ4KdsIlknEH/8z64Im5soEdVYsHBShIGSS3CUS+KXxdtL6/uNhYx4CBE+SXoGofvetwR/dW9QGmBXu3v+enQ==",
+      "type": "package",
+      "path": "grpc.net.client/2.50.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.50.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net5.0/Grpc.Net.Client.dll",
+        "lib/net5.0/Grpc.Net.Client.pdb",
+        "lib/net5.0/Grpc.Net.Client.xml",
+        "lib/net6.0/Grpc.Net.Client.dll",
+        "lib/net6.0/Grpc.Net.Client.pdb",
+        "lib/net6.0/Grpc.Net.Client.xml",
+        "lib/net7.0/Grpc.Net.Client.dll",
+        "lib/net7.0/Grpc.Net.Client.pdb",
+        "lib/net7.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.50.0": {
+      "sha512": "xRoZfo74Cgrr/c/4Y6YCyCiKxz5JLMAi8c9nPhy1vrNXvNjj2Sdd/kSySi9VlZZbMHoDBTcn5ZlPumDPDirnHw==",
+      "type": "package",
+      "path": "grpc.net.common/2.50.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.50.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net5.0/Grpc.Net.Common.dll",
+        "lib/net5.0/Grpc.Net.Common.pdb",
+        "lib/net5.0/Grpc.Net.Common.xml",
+        "lib/net6.0/Grpc.Net.Common.dll",
+        "lib/net6.0/Grpc.Net.Common.pdb",
+        "lib/net6.0/Grpc.Net.Common.xml",
+        "lib/net7.0/Grpc.Net.Common.dll",
+        "lib/net7.0/Grpc.Net.Common.pdb",
+        "lib/net7.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.xml",
+        "packageIcon.png"
+      ]
+    },
     "kafka-net/0.9.0.65": {
       "sha512": "bJ89gwjnoNWJpw/DIU5O7vauPrm/pCaX9tFAzOyWoxqcR/ua7YxXHN1TzCY6/0OkO89eD9bsow5qt6xw4RXXPw==",
       "type": "package",
@@ -554,10 +825,10 @@
         "lib/net45/kafka-net.dll"
       ]
     },
-    "librdkafka.redist/2.1.1": {
-      "sha512": "LDExIZlVbBez9mOcqiGGSNj6Jv9OYppifAI4FN14tT+swBRbxsnvJOemz3ZWyZOzbuqhtZmVhjem79Q8z8cWiA==",
+    "librdkafka.redist/1.5.3": {
+      "sha512": "cB4t+bp6Rb3SVAsnn1fbTBcCWLNbsMnwpbbV4T9jucKQ5Z3Sn/Wo3ji8BdJ9B+xWR7DkiRnQuIu3quvanJgFXQ==",
       "type": "package",
-      "path": "librdkafka.redist/2.1.1",
+      "path": "librdkafka.redist/1.5.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -568,38 +839,30 @@
         "build/native/include/librdkafka/rdkafka.h",
         "build/native/include/librdkafka/rdkafka_mock.h",
         "build/native/include/librdkafka/rdkafkacpp.h",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafkacpp.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafkacpp.lib",
+        "build/native/lib/win/x64/win-x64-Release/v120/librdkafka.lib",
+        "build/native/lib/win/x64/win-x64-Release/v120/librdkafkacpp.lib",
+        "build/native/lib/win/x86/win-x86-Release/v120/librdkafka.lib",
+        "build/native/lib/win/x86/win-x86-Release/v120/librdkafkacpp.lib",
         "build/native/librdkafka.redist.targets",
-        "librdkafka.redist.2.1.1.nupkg.sha512",
+        "librdkafka.redist.1.5.3.nupkg.sha512",
         "librdkafka.redist.nuspec",
-        "runtimes/linux-arm64/native/librdkafka.so",
         "runtimes/linux-x64/native/alpine-librdkafka.so",
-        "runtimes/linux-x64/native/centos6-librdkafka.so",
         "runtimes/linux-x64/native/centos7-librdkafka.so",
+        "runtimes/linux-x64/native/debian9-librdkafka.so",
         "runtimes/linux-x64/native/librdkafka.so",
-        "runtimes/osx-arm64/native/librdkafka.dylib",
         "runtimes/osx-x64/native/librdkafka.dylib",
-        "runtimes/win-x64/native/libcrypto-3-x64.dll",
-        "runtimes/win-x64/native/libcurl.dll",
         "runtimes/win-x64/native/librdkafka.dll",
         "runtimes/win-x64/native/librdkafkacpp.dll",
-        "runtimes/win-x64/native/libssl-3-x64.dll",
-        "runtimes/win-x64/native/msvcp140.dll",
-        "runtimes/win-x64/native/vcruntime140.dll",
-        "runtimes/win-x64/native/zlib1.dll",
-        "runtimes/win-x64/native/zstd.dll",
-        "runtimes/win-x86/native/libcrypto-3.dll",
-        "runtimes/win-x86/native/libcurl.dll",
+        "runtimes/win-x64/native/libzstd.dll",
+        "runtimes/win-x64/native/msvcp120.dll",
+        "runtimes/win-x64/native/msvcr120.dll",
+        "runtimes/win-x64/native/zlib.dll",
         "runtimes/win-x86/native/librdkafka.dll",
         "runtimes/win-x86/native/librdkafkacpp.dll",
-        "runtimes/win-x86/native/libssl-3.dll",
-        "runtimes/win-x86/native/msvcp140.dll",
-        "runtimes/win-x86/native/vcruntime140.dll",
-        "runtimes/win-x86/native/zlib1.dll",
-        "runtimes/win-x86/native/zstd.dll"
+        "runtimes/win-x86/native/libzstd.dll",
+        "runtimes/win-x86/native/msvcp120.dll",
+        "runtimes/win-x86/native/msvcr120.dll",
+        "runtimes/win-x86/native/zlib.dll"
       ]
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
@@ -739,6 +1002,64 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.DependencyInjection/7.0.0": {
+      "sha512": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "sha512": "h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
       "sha512": "NyawiW9ZT/liQb34k9YqBSNPLuuPkrjMgQZ24Y/xXX1RoiBkLUdPMaQTmxhZ5TYu8ZKZ9qayzil75JX95vGQUg==",
       "type": "package",
@@ -820,6 +1141,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Logging.Abstractions/3.0.3": {
+      "sha512": "m2Jyi/MEn043WMI1I6J1ALuCThktZ93rd7eqzYeLmMcA0bdZC+TBVl0LuEbEWM01dWeeBjOoagjNwQTzOi2r6A==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Primitives/7.0.0": {
       "sha512": "um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q==",
       "type": "package",
@@ -874,10 +1209,10 @@
         "packageIcon.png"
       ]
     },
-    "NLog/5.1.4": {
-      "sha512": "Ki0XThITEd//RrQ21yi1HB/Uid4pzTRE5YLvEpk91d0vDXp3OPtVCvWgrYsqqcpTwiipFSOLSsU1RblaexrFiA==",
+    "NLog/5.1.5": {
+      "sha512": "ZITyL6pD8f7w6ahHoP7DC4KpsyZMVuSsP7lmMo9WOYg/65/yEqpCteEOWI9lOIqJB2i8/obIj1ivIAOiMt4+eg==",
       "type": "package",
-      "path": "nlog/5.1.4",
+      "path": "nlog/5.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -894,7 +1229,7 @@
         "lib/netstandard1.5/NLog.xml",
         "lib/netstandard2.0/NLog.dll",
         "lib/netstandard2.0/NLog.xml",
-        "nlog.5.1.4.nupkg.sha512",
+        "nlog.5.1.5.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -926,16 +1261,16 @@
         "nlog.kafka.nuspec"
       ]
     },
-    "NLog.Schema/5.1.4": {
-      "sha512": "txfC+Uu6Zx9uzVfsACDRkScfvPwzJC4jUBE+Vq+HGh+hxDnPZX1zEli7n2/m4tSZdVTyfWhDkz64pbQ4pFgo1g==",
+    "NLog.Schema/5.1.5": {
+      "sha512": "imHKPBQ6oa7408V0SwipcWtgSTtIkMkwvVzKn3eMyBccdkVRL0/Ly9AsnnaTHFYpuMFgWTQDlPt2VYqKK3bZpw==",
       "type": "package",
-      "path": "nlog.schema/5.1.4",
+      "path": "nlog.schema/5.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "content/NLog.xsd",
         "contentFiles/any/any/NLog.xsd",
-        "nlog.schema.5.1.4.nupkg.sha512",
+        "nlog.schema.5.1.5.nupkg.sha512",
         "nlog.schema.nuspec"
       ]
     },
@@ -985,40 +1320,22 @@
         "nlog.windows.forms.nuspec"
       ]
     },
-    "System.Memory/4.5.0": {
-      "sha512": "m0psCSpUxTGfvwyO0i03ajXVhgBqyXlibXz0Mo1dtKGjaHrXFLnuQ8rNBTmWRqbfRjr4eC6Wah4X5FfuFDu5og==",
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
       "type": "package",
-      "path": "system.memory/4.5.0",
+      "path": "system.memory/4.5.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.1/System.Memory.dll",
         "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
-        "lib/uap10.0.16300/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
         "ref/netcoreapp2.1/_._",
-        "ref/netstandard1.1/System.Memory.dll",
-        "ref/netstandard1.1/System.Memory.xml",
-        "ref/netstandard2.0/System.Memory.dll",
-        "ref/netstandard2.0/System.Memory.xml",
-        "ref/uap10.0.16300/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.memory.4.5.0.nupkg.sha512",
+        "system.memory.4.5.3.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -1154,17 +1471,19 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "Confluent.Kafka >= 2.1.1",
       "DVG.Autoportal.NLog.Targets.KafkaAppender >= 1.0.8",
       "Microsoft.Extensions.Configuration.Binder >= 7.0.4",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
-      "NLog >= 5.1.4",
+      "NLog >= 5.1.5",
       "NLog.Config >= 4.7.15",
       "NLog.Kafka >= 0.2.2",
-      "NLog.Schema >= 5.1.4",
+      "NLog.Schema >= 5.1.5",
       "NLog.Targets.Kafka >= 1.0.0",
       "NLog.Targets.KafkaAppender >= 2.0.0",
-      "NLog.Windows.Forms >= 5.0.0"
+      "NLog.Windows.Forms >= 5.0.0",
+      "dotnet-etcd >= 6.0.1",
+      "dotnet-etcd-core >= 6.2.1.1",
+      "etcdnetv2 >= 2.0.1"
     ]
   },
   "packageFolders": {
@@ -1206,10 +1525,6 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "Confluent.Kafka": {
-            "target": "Package",
-            "version": "[2.1.1, )"
-          },
           "DVG.Autoportal.NLog.Targets.KafkaAppender": {
             "target": "Package",
             "version": "[1.0.8, )"
@@ -1224,7 +1539,7 @@
           },
           "NLog": {
             "target": "Package",
-            "version": "[5.1.4, )"
+            "version": "[5.1.5, )"
           },
           "NLog.Config": {
             "target": "Package",
@@ -1236,7 +1551,7 @@
           },
           "NLog.Schema": {
             "target": "Package",
-            "version": "[5.1.4, )"
+            "version": "[5.1.5, )"
           },
           "NLog.Targets.Kafka": {
             "target": "Package",
@@ -1249,6 +1564,18 @@
           "NLog.Windows.Forms": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "dotnet-etcd": {
+            "target": "Package",
+            "version": "[6.0.1, )"
+          },
+          "dotnet-etcd-core": {
+            "target": "Package",
+            "version": "[6.2.1.1, )"
+          },
+          "etcdnetv2": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           }
         },
         "imports": [

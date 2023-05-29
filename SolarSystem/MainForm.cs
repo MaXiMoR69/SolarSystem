@@ -1,5 +1,6 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
+using EtcdNet;
 
 
 namespace SolarSystem
@@ -251,30 +252,26 @@ namespace SolarSystem
             });
         }
 
-
-
+       
 
         async void SendEtcd()
         {
             var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
             var section = config.GetSection("EtcdConfig");
             var etcdConfig = section.Get<EtcdConfig>();
-
             var date = DateTime.Now.ToString();
 
-            var values = new Dictionary<string, string>
+
+            EtcdClientOpitions options = new EtcdClientOpitions()
             {
-                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \""+date+"\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" },
-                    {"action", "set" }
+                Urls = new string[] { etcdConfig.EtcdUrl },
             };
-            var content = new FormUrlEncodedContent(values);
+            EtcdClient etcdClient = new EtcdClient(options);
 
-
-            using var client = new HttpClient();
             try
             {
-                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/" + etcdConfig.EtcdKey, content);
-                string responseText = await response.Content.ReadAsStringAsync();
+                var response = await etcdClient.SetNodeAsync("/v2/keys/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" );
+                string responseText = await etcdClient.GetNodeValueAsync("/v2/keys/services/" + etcdConfig.EtcdKey);
                 logger.Info("Связь с Etcd уcтановлена");
                 logger.Debug(responseText);
             }
@@ -286,36 +283,34 @@ namespace SolarSystem
             }
         }
 
-        async void MainFormClosed(object sender, FormClosedEventArgs e)
+        async void MainFormClosing(object sender, FormClosingEventArgs e)
         {
             var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
             var section = config.GetSection("EtcdConfig");
             var etcdConfig = section.Get<EtcdConfig>();
-
             var date = DateTime.Now.ToString();
 
-            var values = new Dictionary<string, string>
+
+            EtcdClientOpitions options = new EtcdClientOpitions()
             {
-                    {"value","{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \""+date+"\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" },
-                    {"action", "set" }
+                Urls = new string[] { etcdConfig.EtcdUrl },
             };
-            var content = new FormUrlEncodedContent(values);
+            EtcdClient etcdClient = new EtcdClient(options);
 
-
-            using var client = new HttpClient();
             try
             {
-                using var response = await client.PostAsync(etcdConfig.EtcdUrl + "/v2/keys/services/" + etcdConfig.EtcdKey, content);
-                string responseText = await response.Content.ReadAsStringAsync();
-                logger.Info("Связь с Etcd установлена");
+                var response = await etcdClient.SetNodeAsync("/v2/keys/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
+                string responseText = await etcdClient.GetNodeValueAsync("/v2/keys/services/" + etcdConfig.EtcdKey);
+                logger.Info("Связь с Etcd уcтановлена");
                 logger.Debug(responseText);
             }
             catch
             {
 
                 logger.Error("Связь с Etcd разорвана");
-
+               
             }
+           
         }
     }
 }

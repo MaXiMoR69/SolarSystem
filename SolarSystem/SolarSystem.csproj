@@ -9,14 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Confluent.Kafka" Version="2.1.1" />
+    <PackageReference Include="dotnet-etcd" Version="6.0.1" />
+    <PackageReference Include="dotnet-etcd-core" Version="6.2.1.1" />
     <PackageReference Include="DVG.Autoportal.NLog.Targets.KafkaAppender" Version="1.0.8" />
+    <PackageReference Include="etcdnetv2" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
-    <PackageReference Include="NLog" Version="5.1.4" />
+    <PackageReference Include="NLog" Version="5.1.5" />
     <PackageReference Include="NLog.Config" Version="4.7.15" />
     <PackageReference Include="NLog.Kafka" Version="0.2.2" />
-    <PackageReference Include="NLog.Schema" Version="5.1.4" />
+    <PackageReference Include="NLog.Schema" Version="5.1.5" />
     <PackageReference Include="NLog.Targets.Kafka" Version="1.0.0" />
     <PackageReference Include="NLog.Targets.KafkaAppender" Version="2.0.0" />
     <PackageReference Include="NLog.Windows.Forms" Version="5.0.0" />

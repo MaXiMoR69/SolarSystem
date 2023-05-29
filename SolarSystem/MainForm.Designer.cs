@@ -30,8 +30,8 @@ namespace SolarSystem
             startButton.Click += ClickOnButtonStart;
             Resize += Form1_Resize;
             Load += Form1_Load;
-            FormClosed += MainFormClosed;
-           
+            FormClosing += MainFormClosing;
+
 
             BackColor = Color.Black;
 

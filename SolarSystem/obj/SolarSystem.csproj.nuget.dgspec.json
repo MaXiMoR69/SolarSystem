@@ -40,10 +40,6 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "Confluent.Kafka": {
-              "target": "Package",
-              "version": "[2.1.1, )"
-            },
             "DVG.Autoportal.NLog.Targets.KafkaAppender": {
               "target": "Package",
               "version": "[1.0.8, )"
@@ -58,7 +54,7 @@
             },
             "NLog": {
               "target": "Package",
-              "version": "[5.1.4, )"
+              "version": "[5.1.5, )"
             },
             "NLog.Config": {
               "target": "Package",
@@ -70,7 +66,7 @@
             },
             "NLog.Schema": {
               "target": "Package",
-              "version": "[5.1.4, )"
+              "version": "[5.1.5, )"
             },
             "NLog.Targets.Kafka": {
               "target": "Package",
@@ -83,6 +79,18 @@
             "NLog.Windows.Forms": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "dotnet-etcd": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "dotnet-etcd-core": {
+              "target": "Package",
+              "version": "[6.2.1.1, )"
+            },
+            "etcdnetv2": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             }
           },
           "imports": [
