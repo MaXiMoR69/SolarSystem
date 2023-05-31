@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using EtcdNet;
 
 
+
 namespace SolarSystem
 {
 
@@ -29,7 +30,6 @@ namespace SolarSystem
 
         Label info = new Label();
 
-
         Label moon = new Label();
 
         SpaceBody Sun = new SpaceBody();
@@ -44,17 +44,11 @@ namespace SolarSystem
 
         SpaceBody Moon = new SpaceBody();
 
-
-
-
-
-
         public MainForm()
         {
-            
             InitializeComponent();
             CreateSolarSystem();
-            
+
 
             _hScrollBar.Size = new Size(1000, 50);
             _hScrollBar.Location = new Point(Width / 4, Height - 100);
@@ -75,7 +69,6 @@ namespace SolarSystem
             startButton.Font = new Font("Arial", 10, FontStyle.Bold);
             Controls.Add(startButton);
 
-
             stopButton.Size = new Size(100, 50);
             stopButton.Location = new Point(20, 20);
             stopButton.Text = "Stop";
@@ -90,10 +83,6 @@ namespace SolarSystem
             info.TextAlign = ContentAlignment.MiddleCenter;
             info.Font = new Font("Arial", 20, FontStyle.Bold);
             Controls.Add(info);
-
-
-
-
         }
 
         public class SpaceBody
@@ -111,10 +100,9 @@ namespace SolarSystem
 
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            logger.Debug("Program Start");
+            logger.Debug("Program was started");
         }
 
         void Form1_Resize(object sender, EventArgs e)
@@ -156,13 +144,13 @@ namespace SolarSystem
             Region rgn = new Region(path);
             body.Region = rgn;
 
-            
+
 
             body.Click += BodyClick;
             void BodyClick(object sender, EventArgs e)
             {
                 info.Text = name;
-                logger.Info("Click on " + name);
+                logger.Debug("Click on " + name);
             }
 
         }
@@ -170,15 +158,16 @@ namespace SolarSystem
 
         void HScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
-
-
             CreateSolarSystem();
-
+            logger.Debug("Changing value of horisontal scroll bar (solar rotation)");
         }
+
+
+
 
         void CreateSolarSystem()
         {
-            CreateBody(Sun, sun, "Sun", (Width - 200) / 2, 900 / 2, 1, 0, 1, 40, 40, Color.Yellow);  
+            CreateBody(Sun, sun, "Sun", (Width - 200) / 2, 900 / 2, 1, 0, 1, 40, 40, Color.Yellow);
             CreateBody(Mercury, mercury, "Mercury", (Width - 160) / 2, 430, 0.025, 1, 0.9, 8, 8, Color.Gray);
             CreateBody(Venus, venus, "Venus", (Width - 160) / 2, 400, 0.025, 1 / 2.6, 1.5, 15, 15, Color.Pink);
             CreateBody(Earth, earth, "Earth", (Width - 160) / 2, 360, 0.025, 1 / 3.2, 2.5, 20, 20, Color.Blue);
@@ -209,8 +198,6 @@ namespace SolarSystem
             Refresh();
         }
 
-
-
         void ClickOnButtonStart(object sender, EventArgs e)
         {
             startButton.Visible = false;
@@ -232,12 +219,14 @@ namespace SolarSystem
                 }
                 while (i < 10000)
                 {
+
                     i++;
                     Thread.Sleep(1);
                     Invoke((MethodInvoker)delegate
                     {
-                        _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
                         CreateSolarSystem();
+                        _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
+
                         if (_hScrollBar.Value > 99900)
                         {
                             i = 10000;
@@ -252,7 +241,6 @@ namespace SolarSystem
             });
         }
 
-       
 
         async void SendEtcd()
         {
@@ -261,7 +249,6 @@ namespace SolarSystem
             var etcdConfig = section.Get<EtcdConfig>();
             var date = DateTime.Now.ToString();
 
-
             EtcdClientOpitions options = new EtcdClientOpitions()
             {
                 Urls = new string[] { etcdConfig.EtcdUrl },
@@ -270,48 +257,54 @@ namespace SolarSystem
 
             try
             {
-                var response = await etcdClient.SetNodeAsync("/v2/keys/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}" );
-                string responseText = await etcdClient.GetNodeValueAsync("/v2/keys/services/" + etcdConfig.EtcdKey);
-                logger.Info("Связь с Etcd уcтановлена");
-                logger.Debug(responseText);
+                var response = await etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
+                var responseText = await etcdClient.GetNodeValueAsync("/services/" + etcdConfig.EtcdKey);
+                logger.Info("Communication with Etcd established");
+                logger.Debug("/services/" + etcdConfig.EtcdKey + ":" + responseText);
             }
             catch
             {
-
-                logger.Error("Связь с Etcd разорвана");
-
+                logger.Error("Failed to communicate with Etcd");
             }
         }
 
-        async void MainFormClosing(object sender, FormClosingEventArgs e)
+
+
+
+        void MainFormClosing(object sender, FormClosingEventArgs e)
         {
-            var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
-            var section = config.GetSection("EtcdConfig");
-            var etcdConfig = section.Get<EtcdConfig>();
-            var date = DateTime.Now.ToString();
-
-
-            EtcdClientOpitions options = new EtcdClientOpitions()
+            
+            Task.Run(() =>
             {
-                Urls = new string[] { etcdConfig.EtcdUrl },
-            };
-            EtcdClient etcdClient = new EtcdClient(options);
-
-            try
-            {
-                var response = await etcdClient.SetNodeAsync("/v2/keys/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
-                string responseText = await etcdClient.GetNodeValueAsync("/v2/keys/services/" + etcdConfig.EtcdKey);
-                logger.Info("Связь с Etcd уcтановлена");
-                logger.Debug(responseText);
-            }
-            catch
-            {
-
-                logger.Error("Связь с Etcd разорвана");
                
-            }
-           
+
+                var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
+                var section = config.GetSection("EtcdConfig");
+                var etcdConfig = section.Get<EtcdConfig>();
+                var date = DateTime.Now.ToString();
+
+                EtcdClientOpitions options = new EtcdClientOpitions()
+                {
+                    Urls = new string[] { etcdConfig.EtcdUrl },
+                };
+                EtcdClient etcdClient = new EtcdClient(options);
+
+                try
+                {
+                    var response = etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
+                    logger.Info("Communication with Etcd established");
+                }
+                catch
+                {
+                    logger.Error("Failed to communicate with Etcd");
+                }
+                logger.Debug("Program was terminated");
+            });
+            
         }
+
+
+
     }
 }
 

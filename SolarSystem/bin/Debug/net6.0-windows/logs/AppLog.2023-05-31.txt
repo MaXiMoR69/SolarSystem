@@ -1,0 +1,2 @@
+2023-05-31 22:42:47.7937 SolarSystem.MainForm Communication with Etcd established
+2023-05-31 22:42:47.7987 SolarSystem.MainForm Program was terminated
