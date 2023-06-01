@@ -1,6 +1,9 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
 using EtcdNet;
+using System;
+using System.Threading.Tasks;
+using Confluent.Kafka;
 
 
 
@@ -100,10 +103,7 @@ namespace SolarSystem
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            logger.Debug("Program was started");
-        }
+
 
         void Form1_Resize(object sender, EventArgs e)
         {
@@ -156,14 +156,16 @@ namespace SolarSystem
         }
 
 
-        void HScrollBar_Scroll(object sender, ScrollEventArgs e)
+        void HScrollBarScroll(object sender, EventArgs e)
         {
             CreateSolarSystem();
             logger.Debug("Changing value of horisontal scroll bar (solar rotation)");
         }
 
-
-
+        void VScrollBarScroll(object sender, EventArgs e)
+        {
+            logger.Debug("Changing value of verticall scroll bar (solar speed)");
+        }
 
         void CreateSolarSystem()
         {
@@ -198,47 +200,43 @@ namespace SolarSystem
             Refresh();
         }
 
+        static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+
+        void TimerEvent(object sender, EventArgs e)
+        {
+            CreateSolarSystem();
+            if (_hScrollBar.Value > 90000) _hScrollBar.Value = 0;
+            if (_hScrollBar.Value < 90000) _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
+            if (_hScrollBar.Value > 99900)
+            {
+                _hScrollBar.Value = 0;
+                startButton.Visible = true;
+                stopButton.Visible = false;
+            }
+        }
+
         void ClickOnButtonStart(object sender, EventArgs e)
         {
-            startButton.Visible = false;
-            stopButton.Visible = true;
             logger.Debug("Click Start");
+            myTimer.Tick += new EventHandler(TimerEvent);
+            myTimer.Interval = 5;
+            myTimer.Start();
+            stopButton.Visible = true;
+            startButton.Visible = false;
+        }
 
+        void ClickOnButtonStop(object sender, EventArgs e)
+        {
+            logger.Debug("Click Stop");
+            stopButton.Visible = false;
+            startButton.Visible = true;
+            myTimer.Stop();
 
+        }
 
-            Task.Run(() =>
-            {
-                int i = 0;
-                stopButton.MouseClick += ClickOnButtonStop;
-                void ClickOnButtonStop(object sender, EventArgs e)
-                {
-                    logger.Debug("Click Stop");
-                    stopButton.Visible = false;
-                    startButton.Visible = true;
-                    i = 10000;
-                }
-                while (i < 10000)
-                {
-
-                    i++;
-                    Thread.Sleep(1);
-                    Invoke((MethodInvoker)delegate
-                    {
-                        CreateSolarSystem();
-                        _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
-
-                        if (_hScrollBar.Value > 99900)
-                        {
-                            i = 10000;
-
-                            _hScrollBar.Value = 0;
-                            startButton.Visible = true;
-                            stopButton.Visible = false;
-                        }
-
-                    });
-                }
-            });
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            logger.Debug("Program was started");
         }
 
 
@@ -273,10 +271,10 @@ namespace SolarSystem
 
         void MainFormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             Task.Run(() =>
             {
-               
+
 
                 var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
                 var section = config.GetSection("EtcdConfig");
@@ -300,7 +298,7 @@ namespace SolarSystem
                 }
                 logger.Debug("Program was terminated");
             });
-            
+
         }
 
 

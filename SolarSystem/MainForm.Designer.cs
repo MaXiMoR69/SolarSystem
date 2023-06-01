@@ -1,4 +1,5 @@
 ﻿
+
 namespace SolarSystem
 {
     partial class MainForm
@@ -6,12 +7,8 @@ namespace SolarSystem
        
         private System.ComponentModel.IContainer components = null;
 
-        
-       
-
         #region Windows Form Designer generated code
 
-        
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -26,13 +23,14 @@ namespace SolarSystem
             Name = "MainForm";
             Text = "SolarSystem";
             StartPosition = FormStartPosition.CenterScreen;
-            _hScrollBar.Scroll += HScrollBar_Scroll;
+            _hScrollBar.MouseEnter += HScrollBarScroll;
+            _vScrollBar.MouseEnter += VScrollBarScroll;
             startButton.Click += ClickOnButtonStart;
+            stopButton.Click += ClickOnButtonStop;
             Resize += Form1_Resize;
             Load += Form1_Load;
             FormClosing += MainFormClosing;
-
-
+         
             BackColor = Color.Black;
 
             ResumeLayout(false);
@@ -46,7 +44,7 @@ namespace SolarSystem
         }
 
        
-
+       
 
 
 
