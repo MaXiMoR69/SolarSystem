@@ -10,8 +10,8 @@ namespace SolarSystem
             
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
+          
 
-           
 
         }
         

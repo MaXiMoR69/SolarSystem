@@ -1,11 +1,6 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
 using EtcdNet;
-using System;
-using System.Threading.Tasks;
-using Confluent.Kafka;
-
-
 
 namespace SolarSystem
 {
@@ -51,7 +46,7 @@ namespace SolarSystem
         {
             InitializeComponent();
             CreateSolarSystem();
-
+            FormClosed += UnregistrationInEtcd;
 
             _hScrollBar.Size = new Size(1000, 50);
             _hScrollBar.Location = new Point(Width / 4, Height - 100);
@@ -102,7 +97,6 @@ namespace SolarSystem
             public string EtcdKey { get; set; }
 
         }
-
 
 
         void Form1_Resize(object sender, EventArgs e)
@@ -240,7 +234,7 @@ namespace SolarSystem
         }
 
 
-        async void SendEtcd()
+        async void RegistrationInEtcd()
         {
             var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
             var section = config.GetSection("EtcdConfig");
@@ -268,14 +262,11 @@ namespace SolarSystem
 
 
 
-
-        void MainFormClosing(object sender, FormClosingEventArgs e)
+        void UnregistrationInEtcd(object sender, FormClosedEventArgs e)
         {
 
             Task.Run(() =>
             {
-
-
                 var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
                 var section = config.GetSection("EtcdConfig");
                 var etcdConfig = section.Get<EtcdConfig>();
@@ -296,7 +287,7 @@ namespace SolarSystem
                 {
                     logger.Error("Failed to communicate with Etcd");
                 }
-                logger.Debug("Program was terminated");
+                logger.Debug("Program was terminated" + "\r\n ----------------------------------------------------------------------------");
             });
 
         }

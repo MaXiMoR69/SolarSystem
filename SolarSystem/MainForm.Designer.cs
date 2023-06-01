@@ -29,14 +29,14 @@ namespace SolarSystem
             stopButton.Click += ClickOnButtonStop;
             Resize += Form1_Resize;
             Load += Form1_Load;
-            FormClosing += MainFormClosing;
+           
          
             BackColor = Color.Black;
 
             ResumeLayout(false);
 
 
-            SendEtcd();
+            RegistrationInEtcd();
 
 
 
