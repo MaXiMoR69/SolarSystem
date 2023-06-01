@@ -1,141 +1,34 @@
-2023-06-01 14:20:07.4097 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:20:12.3990 SolarSystem.MainForm Click Stop
-2023-06-01 14:20:13.2568 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:20:13.2568 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:20:39.9751 SolarSystem.MainForm Program was started
-2023-06-01 14:20:39.9751 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:20:40.0270 SolarSystem.MainForm /services/solarsystem:{
+2023-06-01 14:44:15.7225 SolarSystem.MainForm Communication with Etcd established
+2023-06-01 14:44:15.7225 SolarSystem.MainForm Click on Body name
+2023-06-01 14:44:15.7685 SolarSystem.MainForm /services/solarsystem:{
     "name": "Solar System on C#",
     "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:20:13",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "01.06.2023 14:38:00",
     "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
 }
-2023-06-01 14:20:41.0363 SolarSystem.MainForm Click Start
-2023-06-01 14:20:42.0059 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:20:43.8341 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:20:46.7428 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:20:47.0100 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:20:49.2945 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:20:53.3659 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:20:53.3659 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:21:00.9412 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:21:00.9412 SolarSystem.MainForm Program was started
-2023-06-01 14:21:01.0023 SolarSystem.MainForm /services/solarsystem:{
-    "name": "Solar System on C#",
-    "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:20:53",
-    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
-}
-2023-06-01 14:21:02.0879 SolarSystem.MainForm Click Start
-2023-06-01 14:21:02.9872 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:03.7507 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:05.2209 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:06.3964 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:21:10.7482 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:21:11.2295 SolarSystem.MainForm Click Stop
-2023-06-01 14:21:12.9851 SolarSystem.MainForm Click Start
-2023-06-01 14:21:13.1986 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:21:14.0869 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:16.0678 SolarSystem.MainForm Click Stop
-2023-06-01 14:21:16.3600 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:16.5105 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:19.9078 SolarSystem.MainForm Click Start
-2023-06-01 14:21:21.6322 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:21:24.0912 SolarSystem.MainForm Click Stop
-2023-06-01 14:21:24.8175 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:26.5875 SolarSystem.MainForm Click Start
-2023-06-01 14:21:27.8474 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:21:28.5973 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:41.0600 SolarSystem.MainForm Click Stop
-2023-06-01 14:21:41.5942 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:21:44.7261 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:21:44.7261 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:22:02.0082 SolarSystem.MainForm Program was started
-2023-06-01 14:22:02.0082 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:22:02.0598 SolarSystem.MainForm /services/solarsystem:{
-    "name": "Solar System on C#",
-    "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:21:44",
-    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
-}
-2023-06-01 14:22:02.7141 SolarSystem.MainForm Click Start
-2023-06-01 14:22:02.9277 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:22:04.8573 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:22:14.8928 SolarSystem.MainForm Click Stop
-2023-06-01 14:22:15.3273 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:22:16.8409 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:22:17.4448 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:22:17.5308 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:22:18.6088 SolarSystem.MainForm Click Start
-2023-06-01 14:22:20.1757 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:22:25.4632 SolarSystem.MainForm Click Stop
-2023-06-01 14:22:26.3202 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:22:26.3202 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:22:56.5967 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:22:56.5967 SolarSystem.MainForm Program was started
-2023-06-01 14:22:56.6583 SolarSystem.MainForm /services/solarsystem:{
-    "name": "Solar System on C#",
-    "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:22:26",
-    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
-}
-2023-06-01 14:22:58.2474 SolarSystem.MainForm Click Start
-2023-06-01 14:22:58.8782 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:23:00.5712 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:23:11.8723 SolarSystem.MainForm Click Stop
-2023-06-01 14:23:12.4002 SolarSystem.MainForm Click Start
-2023-06-01 14:23:15.2510 SolarSystem.MainForm Click Stop
-2023-06-01 14:23:15.8982 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:23:15.8982 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:23:56.0570 SolarSystem.MainForm Program was started
-2023-06-01 14:23:56.0570 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:23:56.1116 SolarSystem.MainForm /services/solarsystem:{
-    "name": "Solar System on C#",
-    "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:23:15",
-    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
-}
-2023-06-01 14:23:57.0111 SolarSystem.MainForm Click Start
-2023-06-01 14:23:57.5841 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:23:57.6843 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:23:58.3727 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:24:00.1457 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:24:09.0712 SolarSystem.MainForm Click Stop
-2023-06-01 14:24:09.4024 SolarSystem.MainForm Click Start
-2023-06-01 14:24:10.4272 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:24:13.0540 SolarSystem.MainForm Click Stop
-2023-06-01 14:24:13.8691 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:24:13.8691 SolarSystem.MainForm Program was terminated
- ----------------------------------------------------------------------------
-2023-06-01 14:24:20.8043 SolarSystem.MainForm Program was started
-2023-06-01 14:24:20.8043 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:24:20.8687 SolarSystem.MainForm /services/solarsystem:{
-    "name": "Solar System on C#",
-    "ip": "195.245.244.64",
-    "online": false,
-    "reason": "closed",
-    "lastUpdate": "01.06.2023 14:24:13",
-    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
-}
-2023-06-01 14:24:21.5389 SolarSystem.MainForm Click Start
-2023-06-01 14:24:22.4646 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
-2023-06-01 14:24:23.6656 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
-2023-06-01 14:24:31.3293 SolarSystem.MainForm Click Stop
-2023-06-01 14:24:32.0623 SolarSystem.MainForm Communication with Etcd established
-2023-06-01 14:24:32.0623 SolarSystem.MainForm Program was terminated
+2023-06-01 14:44:15.8881 SolarSystem.MainForm Program was started
+2023-06-01 14:44:18.1594 SolarSystem.MainForm Changing value of verticall scroll bar (solar speed)
+2023-06-01 14:44:18.9854 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-01 14:44:21.2608 SolarSystem.MainForm Click Start
+2023-06-01 14:44:21.9129 SolarSystem.MainForm Click Stop
+2023-06-01 14:44:22.9429 SolarSystem.MainForm Click on Sun
+2023-06-01 14:44:23.4717 SolarSystem.MainForm Click on Jupiter
+2023-06-01 14:44:23.9798 SolarSystem.MainForm Click on Saturn
+2023-06-01 14:44:24.7158 SolarSystem.MainForm Click on Uran
+2023-06-01 14:44:25.0925 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-01 14:44:36.7157 SolarSystem.MainForm Click Start
+2023-06-01 14:44:37.6133 SolarSystem.MainForm Click Stop
+2023-06-01 14:44:38.1915 SolarSystem.MainForm Click on Jupiter
+2023-06-01 14:44:38.6892 SolarSystem.MainForm Click on Uran
+2023-06-01 14:44:39.2564 SolarSystem.MainForm Click on Sun
+2023-06-01 14:44:40.2144 SolarSystem.MainForm Click on Venus
+2023-06-01 14:44:41.2055 SolarSystem.MainForm Click on Mars
+2023-06-01 14:44:42.0026 SolarSystem.MainForm Click on Neptun
+2023-06-01 14:44:42.7611 SolarSystem.MainForm Click on Earth
+2023-06-01 14:44:43.3427 SolarSystem.MainForm Click on Saturn
+2023-06-01 14:44:44.1020 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-01 14:44:53.6530 SolarSystem.MainForm Communication with Etcd established
+2023-06-01 14:44:53.6530 SolarSystem.MainForm Program was terminated
  ----------------------------------------------------------------------------

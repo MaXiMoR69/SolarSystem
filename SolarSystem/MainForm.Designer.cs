@@ -30,8 +30,8 @@ namespace SolarSystem
             stopButton.Click += ClickOnButtonStop;
             Resize += Form1_Resize;
             Load += Form1_Load;
-           
-         
+            info.TextChanged += InfoTexChange;
+
             BackColor = Color.Black;
 
             ResumeLayout(false);

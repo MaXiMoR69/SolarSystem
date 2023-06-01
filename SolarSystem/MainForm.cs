@@ -1,6 +1,7 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
 using EtcdNet;
+using System.Xml.Linq;
 
 namespace SolarSystem
 {
@@ -138,15 +139,17 @@ namespace SolarSystem
             Region rgn = new Region(path);
             body.Region = rgn;
 
-
-
             body.Click += BodyClick;
+
             void BodyClick(object sender, EventArgs e)
             {
                 info.Text = name;
-                logger.Debug("Click on " + name);
             }
+        }
 
+        void InfoTexChange(object sender, EventArgs e)
+        {
+            logger.Debug("Click on " + info.Text);
         }
 
 
