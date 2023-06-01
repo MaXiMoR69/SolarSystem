@@ -150,10 +150,14 @@ namespace SolarSystem
         }
 
 
-        void HScrollBarScroll(object sender, EventArgs e)
+        void HScrollBarChange(object sender, EventArgs e)
         {
             CreateSolarSystem();
             logger.Debug("Changing value of horisontal scroll bar (solar rotation)");
+        }
+        void HScrollBarScroll(object sender, EventArgs e)
+        {
+            CreateSolarSystem();
         }
 
         void VScrollBarScroll(object sender, EventArgs e)
@@ -194,27 +198,22 @@ namespace SolarSystem
             Refresh();
         }
 
-        static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+        static System.Windows.Forms.Timer CreateSystemTimer = new System.Windows.Forms.Timer();
 
         void TimerEvent(object sender, EventArgs e)
         {
             CreateSolarSystem();
-            if (_hScrollBar.Value > 90000) _hScrollBar.Value = 0;
-            if (_hScrollBar.Value < 90000) _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
-            if (_hScrollBar.Value > 99900)
-            {
-                _hScrollBar.Value = 0;
-                startButton.Visible = true;
-                stopButton.Visible = false;
-            }
+            if (_hScrollBar.Value > 99000) _hScrollBar.Value = 0;
+            if (_hScrollBar.Value < 99900) _hScrollBar.Value = _hScrollBar.Value + 1 + _vScrollBar.Value / 100;
+            
         }
 
         void ClickOnButtonStart(object sender, EventArgs e)
         {
             logger.Debug("Click Start");
-            myTimer.Tick += new EventHandler(TimerEvent);
-            myTimer.Interval = 5;
-            myTimer.Start();
+            CreateSystemTimer.Tick += new EventHandler(TimerEvent);
+            CreateSystemTimer.Interval = 5;
+            CreateSystemTimer.Start();
             stopButton.Visible = true;
             startButton.Visible = false;
         }
@@ -224,7 +223,7 @@ namespace SolarSystem
             logger.Debug("Click Stop");
             stopButton.Visible = false;
             startButton.Visible = true;
-            myTimer.Stop();
+            CreateSystemTimer.Stop();
 
         }
 
@@ -239,7 +238,7 @@ namespace SolarSystem
             var config = new ConfigurationBuilder().AddJsonFile("EtcdConfig.json").Build();
             var section = config.GetSection("EtcdConfig");
             var etcdConfig = section.Get<EtcdConfig>();
-            var date = DateTime.Now.ToString();
+            
 
             EtcdClientOpitions options = new EtcdClientOpitions()
             {
@@ -249,10 +248,18 @@ namespace SolarSystem
 
             try
             {
-                var response = await etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
-                var responseText = await etcdClient.GetNodeValueAsync("/services/" + etcdConfig.EtcdKey);
-                logger.Info("Communication with Etcd established");
-                logger.Debug("/services/" + etcdConfig.EtcdKey + ":" + responseText);
+                _ = Task.Run(async () =>
+                {
+                    while (true)
+                    {
+                        var date = DateTime.Now.ToString();
+                        var response =  etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
+                        var responseText = await etcdClient.GetNodeValueAsync("/services/" + etcdConfig.EtcdKey);
+                        logger.Info("Communication with Etcd established");
+                        logger.Debug("/services/" + etcdConfig.EtcdKey + ":" + responseText);
+                        Thread.Sleep(3600000);
+                    }
+                });
             }
             catch
             {

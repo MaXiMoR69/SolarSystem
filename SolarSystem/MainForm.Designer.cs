@@ -23,7 +23,8 @@ namespace SolarSystem
             Name = "MainForm";
             Text = "SolarSystem";
             StartPosition = FormStartPosition.CenterScreen;
-            _hScrollBar.MouseEnter += HScrollBarScroll;
+            _hScrollBar.MouseEnter += HScrollBarChange;
+            _hScrollBar.Scroll += HScrollBarScroll;
             _vScrollBar.MouseEnter += VScrollBarScroll;
             startButton.Click += ClickOnButtonStart;
             stopButton.Click += ClickOnButtonStop;
