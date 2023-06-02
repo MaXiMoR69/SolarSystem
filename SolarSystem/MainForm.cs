@@ -1,7 +1,6 @@
 using NLog;
 using Microsoft.Extensions.Configuration;
 using EtcdNet;
-using System.Xml.Linq;
 
 namespace SolarSystem
 {
@@ -78,7 +77,6 @@ namespace SolarSystem
             info.Size = new Size(200, 50);
             info.Location = new Point(200, 20);
             info.BackColor = Color.White;
-            info.Text = "Body name";
             info.TextAlign = ContentAlignment.MiddleCenter;
             info.Font = new Font("Arial", 20, FontStyle.Bold);
             Controls.Add(info);
@@ -258,9 +256,9 @@ namespace SolarSystem
                         var date = DateTime.Now.ToString();
                         var response =  etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": true,\r\n    \"reason\": \"open\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
                         var responseText = await etcdClient.GetNodeValueAsync("/services/" + etcdConfig.EtcdKey);
-                        logger.Info("Communication with Etcd established");
+                        logger.Debug("Communication with Etcd established");
                         logger.Debug("/services/" + etcdConfig.EtcdKey + ":" + responseText);
-                        Thread.Sleep(3600000);
+                        Thread.Sleep(10000);
                     }
                 });
             }
@@ -291,7 +289,7 @@ namespace SolarSystem
                 try
                 {
                     var response = etcdClient.SetNodeAsync("/services/" + etcdConfig.EtcdKey, "{\r\n    \"name\": \"Solar System on C#\",\r\n    \"ip\": \"195.245.244.64\",\r\n    \"online\": false,\r\n    \"reason\": \"closed\",\r\n    \"lastUpdate\": \"" + date + "\",\r\n    \"configsPath\": \"C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json\"\r\n}");
-                    logger.Info("Communication with Etcd established");
+                    logger.Debug("Communication with Etcd established");
                 }
                 catch
                 {

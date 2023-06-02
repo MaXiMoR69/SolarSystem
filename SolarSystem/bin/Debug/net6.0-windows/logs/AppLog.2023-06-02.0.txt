@@ -1,0 +1,214 @@
+2023-06-02 18:55:14.3101 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:55:14.3120 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:04",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:55:24.3563 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:55:24.3563 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:14",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:55:34.4106 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:55:34.4106 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:34",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:55:44.4554 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:55:44.4554 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:34",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:55:54.4992 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:55:54.4992 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:44",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:04.5445 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:04.5449 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:55:54",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:14.1312 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-02 18:56:14.5901 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:14.5901 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:56:04",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:14.8443 SolarSystem.MainForm Click on Jupiter
+2023-06-02 18:56:15.4724 SolarSystem.MainForm Click on Sun
+2023-06-02 18:56:15.8654 SolarSystem.MainForm Click on Earth
+2023-06-02 18:56:16.0951 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-02 18:56:24.6382 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:24.6382 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:56:14",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:34.6870 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:34.6870 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:56:24",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:44.7361 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:44.7361 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:56:34",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:56:54.7919 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:56:54.7919 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:56:44",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:04.8385 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:04.8385 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:04",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:05.1878 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-02 18:57:05.6786 SolarSystem.MainForm Click on Sun
+2023-06-02 18:57:06.0015 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-02 18:57:14.8858 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:14.8858 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:04",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:24.9421 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:24.9421 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:14",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:34.9916 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:34.9916 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:24",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:45.0482 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:45.0482 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:34",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:57:55.0887 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:57:55.0887 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:45",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:58:05.1306 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:58:05.1306 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:57:55",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:58:15.1835 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:58:15.1835 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 18:58:05",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 18:58:18.2935 SolarSystem.MainForm Changing value of horisontal scroll bar (solar rotation)
+2023-06-02 18:58:19.6592 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 18:58:19.6592 SolarSystem.MainForm Program was terminated
+ ----------------------------------------------------------------------------
+2023-06-02 19:04:35.8172 SolarSystem.MainForm Program was started
+2023-06-02 19:04:35.8172 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 19:04:35.8906 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": false,
+    "reason": "closed",
+    "lastUpdate": "02.06.2023 18:58:19",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 19:04:37.4371 SolarSystem.MainForm Click on Jupiter
+2023-06-02 19:04:38.2988 SolarSystem.MainForm Click on Saturn
+2023-06-02 19:04:39.0288 SolarSystem.MainForm Click on Uran
+2023-06-02 19:04:39.5989 SolarSystem.MainForm Click on Neptun
+2023-06-02 19:04:40.7500 SolarSystem.MainForm Click on Earth
+2023-06-02 19:04:41.9731 SolarSystem.MainForm Click on Sun
+2023-06-02 19:04:42.9152 SolarSystem.MainForm Click on Mercury
+2023-06-02 19:04:43.3323 SolarSystem.MainForm Click on Venus
+2023-06-02 19:04:43.6683 SolarSystem.MainForm Click on Earth
+2023-06-02 19:04:44.4884 SolarSystem.MainForm Click on Mars
+2023-06-02 19:04:44.8534 SolarSystem.MainForm Click on Jupiter
+2023-06-02 19:04:45.9454 SolarSystem.MainForm Communication with Etcd established
+2023-06-02 19:04:45.9454 SolarSystem.MainForm /services/solarsystem:{
+    "name": "Solar System on C#",
+    "ip": "195.245.244.64",
+    "online": true,
+    "reason": "open",
+    "lastUpdate": "02.06.2023 19:04:45",
+    "configsPath": "C:/Users/maksg/source/repos/SolarSystem/SolarSystem/EtcdConfig.json"
+}
+2023-06-02 19:04:46.4922 SolarSystem.MainForm Communication with Etcd established
